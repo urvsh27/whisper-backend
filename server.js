@@ -245,12 +245,17 @@ async function processWithAI(user_text, conversationHistory) {
   }
 }
 
+
+const server_log = `Server running on port ${PORT}`
+
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.json({
+   message : server_log
+  });
 });
 
 // Start the server
 const PORT = process.env.PORT || 4001;
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(server_log);
 });
