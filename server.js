@@ -245,7 +245,7 @@ async function processWithAI(user_text, conversationHistory) {
   }
 }
 
-
+const PORT = process.env.PORT || 4001;
 const server_log = `Server running on port ${PORT}`
 
 app.get("/", (req, res) => {
@@ -255,7 +255,6 @@ app.get("/", (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 4001;
 server.listen(PORT, () => {
   console.log(server_log);
 });
