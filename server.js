@@ -69,8 +69,8 @@ wss.on("connection", (ws) => {
           }
 
           const aiResponse = await processWithAI(text, conversationHistory);
-          // conversationHistory.push({ role: "user", content: text });
-          // conversationHistory.push({ role: "assistant", content: aiResponse });
+          conversationHistory.push({ role: "user", content: text });
+          conversationHistory.push({ role: "assistant", content: aiResponse });
 
           ws.send(
             JSON.stringify({
