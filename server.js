@@ -16,7 +16,11 @@ const app = express();
 const server = http.createServer(app);
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*', // allowing all
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Referer'], // allow Referer header
+}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
