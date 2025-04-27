@@ -1,4 +1,4 @@
-FROM node:18
+FROM --platform=linux/arm64 node:18
 
 WORKDIR /app
 
@@ -7,6 +7,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 8000
 
 CMD ["node", "server.js"]
