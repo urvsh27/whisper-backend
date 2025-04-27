@@ -194,7 +194,7 @@ async function processWithAI(user_text, conversationHistory) {
   try {
     const api_payload = {
       messages: [
-        // ...(conversationHistory ?? {}),
+        ...(conversationHistory ?? {}),
         // {
         //   role: "system",
         //   content:
